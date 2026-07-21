@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Free financial literacy platform for high school students. Learn budgeting, saving, and investing the smart way." />
+  <title>FinWise — Master Your Money</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar">
+  <div class="container navbar__inner">
+    <a href="index.html" class="navbar__logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.582a.5.5 0 0 1 0 .962L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+      <span class="navbar__logo-text">FinWise</span>
+    </a>
+    <nav class="navbar__links">
+      <a href="index.html"     class="navbar__link">Home</a>
+      <a href="learn.html"     class="navbar__link">Learn</a>
+      <a href="tools.html"     class="navbar__link">Tools</a>
+      <a href="quiz.html"      class="navbar__link">Quiz</a>
+      <a href="resources.html" class="navbar__link">Resources</a>
+      <a href="about.html"     class="navbar__link">About</a>
+      <a href="learn.html" class="btn btn--primary btn--sm navbar__cta">Start Learning</a>
+    </nav>
+    <button class="navbar__mobile-toggle" id="nav-toggle" aria-label="Toggle menu">
+      <span id="nav-icon-menu"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:1.5rem;height:1.5rem"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg></span>
+      <span id="nav-icon-close" style="display:none"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:1.5rem;height:1.5rem"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span>
+    </button>
+  </div>
+  <div class="navbar__mobile-menu" id="nav-mobile-menu">
+    <div class="navbar__mobile-links">
+      <a href="index.html"     class="navbar__mobile-link">Home</a>
+      <a href="learn.html"     class="navbar__mobile-link">Learn</a>
+      <a href="tools.html"     class="navbar__mobile-link">Tools</a>
+      <a href="quiz.html"      class="navbar__mobile-link">Quiz</a>
+      <a href="resources.html" class="navbar__mobile-link">Resources</a>
+      <a href="about.html"     class="navbar__mobile-link">About</a>
+      <a href="learn.html" class="btn btn--primary btn--full navbar__mobile-cta">Start Learning</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero__dot-grid"></div>
+    <div class="container hero__content">
+      <div class="hero__badge-wrap">
+        <div class="badge--gradient-border">
+          <div class="badge-inner">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            Financial Literacy for Students
+          </div>
+        </div>
+      </div>
+
+      <h1>
+        Master Your Money.<br>
+        <span class="gradient-text">Build Your Future.</span>
+      </h1>
+
+      <p class="hero__sub">
+        Free financial education tools designed for students. Learn budgeting, saving, and investing the smart way—before adulthood hits.
+      </p>
+
+      <div class="hero__ctas">
+        <a href="learn.html" class="btn btn--primary btn--lg">
+          Start Learning
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a href="tools.html" class="btn btn--outline btn--lg">Try Budget Calculator</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY FINANCIAL LITERACY MATTERS ============ -->
+  <section class="why-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Financial Literacy Matters</h2>
+        <p class="section-subtitle">The rules of money aren't taught in most schools. We're here to fix that.</p>
+      </div>
+      <div class="cards-grid-4">
+
+        <div class="feature-card card--violet reveal reveal-delay-1">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <h3>Budgeting</h3>
+          <p>Learn to tell your money where to go instead of wondering where it went.</p>
+        </div>
+
+        <div class="feature-card card--emerald reveal reveal-delay-2">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2V5z"/><path d="M2 9v1a2 2 0 0 0 2 2h1"/><path d="M16 11h.01"/></svg>
+          </div>
+          <h3>Saving</h3>
+          <p>Build an emergency fund to protect yourself from life's surprises.</p>
+        </div>
+
+        <div class="feature-card card--amber reveal reveal-delay-3">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+          </div>
+          <h3>Investing</h3>
+          <p>Discover how to make your money work for you through compound growth.</p>
+        </div>
+
+        <div class="feature-card card--pink reveal reveal-delay-4">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <h3>Smart Decisions</h3>
+          <p>Navigate credit cards, debt, and avoid common financial traps.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT YOU CAN LEARN ============ -->
+  <section>
+    <div class="container">
+      <div class="learn-section-row">
+        <div>
+          <h2>What You Can Learn</h2>
+          <p class="text-muted">Bite-sized lessons that explain complex financial concepts in plain English.</p>
+        </div>
+        <a href="learn.html" class="btn btn--ghost">
+          View all modules
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="cards-grid-2">
+
+        <a href="learn.html" class="big-card big-card--violet reveal reveal-delay-1">
+          <div class="big-card__bg-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2V5z"/><path d="M2 9v1a2 2 0 0 0 2 2h1"/><path d="M16 11h.01"/></svg>
+          </div>
+          <div class="big-card__content">
+            <h3>Money Basics</h3>
+            <p>Understand income, expenses, and the critical difference between needs and wants.</p>
+            <span class="big-card__pill">
+              Explore module
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <a href="learn.html" class="big-card big-card--amber reveal reveal-delay-2">
+          <div class="big-card__bg-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+          </div>
+          <div class="big-card__content">
+            <h3>Investing 101</h3>
+            <p>Demystify the stock market, compound interest, and how to start building wealth early.</p>
+            <span class="big-card__pill">
+              Explore module
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW FINWISE HELPS ============ -->
+  <section class="steps-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>How FinWise Helps</h2>
+        <p class="section-subtitle">A simple, structured approach to gaining financial confidence.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-item reveal reveal-delay-1">
+          <div class="step-circle">01</div>
+          <h3>Learn the Rules</h3>
+          <p>Read bite-sized lessons that cut through the financial jargon.</p>
+        </div>
+        <div class="step-item reveal reveal-delay-2">
+          <div class="step-circle">02</div>
+          <h3>Practice with Tools</h3>
+          <p>Use our interactive calculators to see how math applies to real life.</p>
+        </div>
+        <div class="step-item reveal reveal-delay-3">
+          <div class="step-circle">03</div>
+          <h3>Test Your Knowledge</h3>
+          <p>Take our comprehensive quiz to prove you're ready for the real world.</p>
+        </div>
+      </div>
+
+      <div class="steps-cta">
+        <a href="learn.html" class="btn btn--white btn--lg">Get Started Now</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.582a.5.5 0 0 1 0 .962L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+          <span class="footer__logo-text">FinWise</span>
+        </a>
+        <p class="footer__tagline">FinWise was created to improve financial literacy among students by making money education accessible, practical, and engaging. Master your money today, build your future tomorrow.</p>
+      </div>
+      <div>
+        <h3 class="footer__heading">Platform</h3>
+        <ul class="footer__links">
+          <li><a href="learn.html">Learn Finance</a></li>
+          <li><a href="tools.html">Calculators</a></li>
+          <li><a href="quiz.html">Take the Quiz</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer__heading">Company</h3>
+        <ul class="footer__links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="resources.html">Resources</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; <span id="footer-year"></span> FinWise. All rights reserved.</p>
+      <p>Educational purposes only. Not financial advice.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

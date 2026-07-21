@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Free financial calculators — budget planner, compound interest, and savings goal." />
+  <title>Tools — FinWise</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar">
+  <div class="container navbar__inner">
+    <a href="index.html" class="navbar__logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.582a.5.5 0 0 1 0 .962L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+      <span class="navbar__logo-text">FinWise</span>
+    </a>
+    <nav class="navbar__links">
+      <a href="index.html"     class="navbar__link">Home</a>
+      <a href="learn.html"     class="navbar__link">Learn</a>
+      <a href="tools.html"     class="navbar__link">Tools</a>
+      <a href="quiz.html"      class="navbar__link">Quiz</a>
+      <a href="resources.html" class="navbar__link">Resources</a>
+      <a href="about.html"     class="navbar__link">About</a>
+      <a href="learn.html" class="btn btn--primary btn--sm navbar__cta">Start Learning</a>
+    </nav>
+    <button class="navbar__mobile-toggle" id="nav-toggle" aria-label="Toggle menu">
+      <span id="nav-icon-menu"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:1.5rem;height:1.5rem"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg></span>
+      <span id="nav-icon-close" style="display:none"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:1.5rem;height:1.5rem"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span>
+    </button>
+  </div>
+  <div class="navbar__mobile-menu" id="nav-mobile-menu">
+    <div class="navbar__mobile-links">
+      <a href="index.html"     class="navbar__mobile-link">Home</a>
+      <a href="learn.html"     class="navbar__mobile-link">Learn</a>
+      <a href="tools.html"     class="navbar__mobile-link">Tools</a>
+      <a href="quiz.html"      class="navbar__mobile-link">Quiz</a>
+      <a href="resources.html" class="navbar__mobile-link">Resources</a>
+      <a href="about.html"     class="navbar__mobile-link">About</a>
+      <a href="learn.html" class="btn btn--primary btn--full navbar__mobile-cta">Start Learning</a>
+    </div>
+  </div>
+</header>
+
+<main class="page-bg">
+  <div class="container">
+    <div class="page-header">
+      <h1>Financial Calculators</h1>
+      <p>Put the theory into practice. Use these tools to plan your budget, visualize compound growth, and figure out when you'll hit your savings goal.</p>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs-list tabs-list--3" role="tablist">
+      <button class="tab-btn active--violet" id="tab-budget" role="tab" onclick="switchTab('budget')">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2V5z"/></svg>
+        <span>Budget</span>
+      </button>
+      <button class="tab-btn" id="tab-compound" role="tab" onclick="switchTab('compound')">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        <span>Compound Interest</span>
+      </button>
+      <button class="tab-btn" id="tab-savings" role="tab" onclick="switchTab('savings')">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        <span>Savings Goal</span>
+      </button>
+    </div>
+
+    <!-- ======= BUDGET CALCULATOR ======= -->
+    <div class="tab-panel active card calc-card" id="panel-budget" role="tabpanel">
+      <div class="calc-card__top-bar calc-card__top-bar--violet"></div>
+      <div class="calc-card-header">
+        <h2>Budget Planner</h2>
+        <p>Enter your monthly income and expenses to see your financial picture at a glance.</p>
+      </div>
+      <div class="calc-card-body">
+        <div class="calc-grid-wide">
+          <!-- Inputs -->
+          <div>
+            <div class="input-group">
+              <label for="income">Monthly Income (after tax)</label>
+              <div class="input-wrap">
+                <span class="input-prefix">$</span>
+                <input class="input input--dollar" id="income" type="number" value="2500" min="0" oninput="calcBudget()" />
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="rent">Housing (rent / mortgage)</label>
+              <div class="input-wrap">
+                <span class="input-prefix">$</span>
+                <input class="input input--dollar" id="rent" type="number" value="900" min="0" oninput="calcBudget()" />
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="food">Food &amp; Groceries</label>
+              <div class="input-wrap">
+                <span class="input-prefix">$</span>
+                <input class="input input--dollar" id="food" type="number" value="400" min="0" oninput="calcBudget()" />
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="transport">Transportation</label>
+              <div class="input-wrap">
+                <span class="input-prefix">$</span>
+                <input class="input input--dollar" id="transport" type="number" value="200" min="0" oninput="calcBudget()" />
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="entertainment">Entertainment &amp; Subscriptions</label>
+              <div class="input-wrap">
+                <span class="input-prefix">$</span>
+                <input class="input input--dollar" id="entertainment" type="number" value="150" min="0" oninput="calcBudget()" />
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="other">Other Expenses</label>
+              <div class="input-wrap">
+                <span class="input-prefix">$</span>
+                <input class="input input--dollar" id="other" type="number" value="100" min="0" oninput="calcBudget()" />
+              </div>
+            </div>
+          </div>
+          <!-- Summary -->
+          <div class="budget-summary">
+            <h3>Monthly Summary</h3>
+            <div class="summary-tiles">
+              <div class="summary-tile summary-tile--green">
+                <p>Monthly Income</p>
+                <div class="tile-value" id="b-income">$2,500</div>
+              </div>
+              <div class="summary-tile summary-tile--yellow">
+                <p>Total Expenses</p>
+                <div class="tile-value" id="b-expenses">$1,750</div>
+              </div>
+              <div class="summary-tile summary-tile--green" id="b-leftover-tile">
+                <p>Money Left Over</p>
+                <div class="tile-value" id="b-leftover">$750</div>
+              </div>
+              <div class="summary-tile">
+                <p>Annual Savings</p>
+                <div class="tile-value" id="b-annual">$9,000</div>
+              </div>
+            </div>
+            <div>
+              <div class="savings-rate-row">
+                <span>Savings Rate</span>
+                <span id="b-rate-pct">30%</span>
+              </div>
+              <div class="progress-wrap progress-wrap--md">
+                <div class="progress-bar progress-bar--violet" id="b-rate-bar" style="width:30%"></div>
+              </div>
+              <p class="savings-note">Aim for at least 20% savings rate (the "20" in 50/30/20).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======= COMPOUND INTEREST ======= -->
+    <div class="tab-panel card calc-card" id="panel-compound" role="tabpanel">
+      <div class="calc-card__top-bar calc-card__top-bar--amber"></div>
+      <div class="calc-card-header">
+        <h2>Compound Interest Calculator</h2>
+        <p>See how your money grows exponentially over time with the power of compounding returns.</p>
+      </div>
+      <div class="calc-card-body">
+        <div class="calc-grid-wide">
+          <!-- Inputs -->
+          <div>
+            <div class="input-group">
+              <label for="ci-principal">Initial Investment</label>
+              <div class="input-wrap">
+                <span class="input-prefix">$</span>
+                <input class="input input--dollar" id="ci-principal" type="number" value="1000" min="0" oninput="calcCompound()" />
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="ci-monthly">Monthly Contribution</label>
+              <div class="input-wrap">
+                <span class="input-prefix">$</span>
+                <input class="input input--dollar" id="ci-monthly" type="number" value="100" min="0" oninput="calcCompound()" />
+              </div>
+            </div>
+            <div>
+              <div class="slider-row">
+                <label for="ci-rate">Annual Interest Rate</label>
+                <span id="ci-rate-val">7%</span>
+              </div>
+              <input type="range" id="ci-rate" min="1" max="20" step="0.5" value="7" oninput="document.getElementById('ci-rate-val').textContent=this.value+'%'; calcCompound();" />
+              <p class="slider-note">S&amp;P 500 historical average: ~10% (7% after inflation)</p>
+            </div>
+            <br />
+            <div>
+              <div class="slider-row">
+                <label for="ci-years">Time Period</label>
+                <span id="ci-years-val">20 years</span>
+              </div>
+              <input type="range" id="ci-years" min="1" max="50" step="1" value="20" oninput="document.getElementById('ci-years-val').textContent=this.value+' years'; calcCompound();" />
+            </div>
+          </div>
+          <!-- Result -->
+          <div>
+            <div class="compound-result">
+              <p>Future Value</p>
+              <div class="future-value" id="ci-future">$0</div>
+              <div class="contribution-note">
+                You invested <strong id="ci-invested">$0</strong> &nbsp;·&nbsp;
+                Interest earned: <span class="interest-amount" id="ci-interest">$0</span>
+              </div>
+            </div>
+            <div class="chart-container">
+              <canvas id="ci-chart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======= SAVINGS GOAL ======= -->
+    <div class="tab-panel card calc-card" id="panel-savings" role="tabpanel">
+      <div class="calc-card__top-bar calc-card__top-bar--emerald"></div>
+      <div class="calc-card-header">
+        <h2>Savings Goal Calculator</h2>
+        <p>Enter your goal and see exactly how long it will take to get there.</p>
+      </div>
+      <div class="calc-card-body">
+        <div class="calc-grid-inputs">
+          <div>
+            <div class="input-group">
+              <label for="sg-goal">Savings Goal</label>
+              <div class="input-wrap">
+                <span class="input-prefix">$</span>
+                <input class="input input--dollar" id="sg-goal" type="number" value="5000" min="1" oninput="calcSavings()" />
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="sg-saved">Amount Already Saved</label>
+              <div class="input-wrap">
+                <span class="input-prefix">$</span>
+                <input class="input input--dollar" id="sg-saved" type="number" value="500" min="0" oninput="calcSavings()" />
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="sg-monthly">Monthly Savings Amount</label>
+              <div class="input-wrap">
+                <span class="input-prefix">$</span>
+                <input class="input input--dollar" id="sg-monthly" type="number" value="250" min="1" oninput="calcSavings()" />
+              </div>
+            </div>
+          </div>
+          <div class="savings-result">
+            <div id="sg-reached-msg" style="display:none" class="goal-reached">🎉 Goal Already Reached!</div>
+            <p class="preamble">Time to reach your goal:</p>
+            <div class="months-value" id="sg-months">18<span class="unit">months</span></div>
+            <p class="years-note" id="sg-years-note">That's 1.5 years</p>
+            <div>
+              <div class="progress-labels">
+                <span>Current Progress</span>
+                <span id="sg-pct-label">10%</span>
+              </div>
+              <div class="progress-wrap progress-wrap--lg">
+                <div class="progress-bar progress-bar--green" id="sg-bar" style="width:10%"></div>
+              </div>
+              <p class="progress-pct" id="sg-saved-display">$500 saved of $5,000 goal</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.582a.5.5 0 0 1 0 .962L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+          <span class="footer__logo-text">FinWise</span>
+        </a>
+        <p class="footer__tagline">Financial literacy for every student.</p>
+      </div>
+      <div>
+        <h3 class="footer__heading">Platform</h3>
+        <ul class="footer__links">
+          <li><a href="learn.html">Learn Finance</a></li>
+          <li><a href="tools.html">Calculators</a></li>
+          <li><a href="quiz.html">Take the Quiz</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer__heading">Company</h3>
+        <ul class="footer__links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="resources.html">Resources</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; <span id="footer-year"></span> FinWise. All rights reserved.</p>
+      <p>Educational purposes only. Not financial advice.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
